@@ -21,6 +21,11 @@ public class SuccessResponse<T> extends BaseResponse {
         this.data = data;
     }
 
+    // 201 Created 응답
+    public static <T> SuccessResponse<T> created(T data) {
+        return new SuccessResponse<>(data, SuccessResponseCode.SUCCESS_CREATED);
+    }
+
     public static <T> SuccessResponse<T> from(T data){
         return new SuccessResponse<>(data, SuccessResponseCode.SUCCESS_OK);
     }
